@@ -12,6 +12,10 @@ db.loadDatabase(function (err) {
 
 });
 
+var text = require('textbelt');
+const sendmail = require('sendmail')();
+
+
 var catArray=["https://static.pexels.com/photos/127028/pexels-photo-127028.jpeg","https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg","http://s1.dmcdn.net/Jyj5s.jpg",
 "https://i.ytimg.com/vi/dGFSjKuJfrI/maxresdefault.jpg","https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAfiAAAAJDM4NWFjMDM3LTE0MmMtNGQxYi1hNDBjLWQ1NGJiZDBiNzdlYQ.png",
 "https://i.ytimg.com/vi/gtoknSe54gs/maxresdefault.jpg","http://www.bandofcats.com/wp-content/uploads/2012/05/funny-cats_169.jpg","http://images5.fanpop.com/image/photos/29000000/Funny-Cats-cats-29074471-500-378.jpg",

@@ -26,6 +26,8 @@
     "morgan": "^1.8.2",
     "react": "16.0.0-alpha.12",
     "react-native": "^0.47.0",
-    "react-native-local-mongodb": "^1.8.2"
+    "react-native-local-mongodb": "^1.8.2",
+    "sendmail": "^1.2.0",
+    "textbelt": "0.0.3"
   }
 }
