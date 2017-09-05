@@ -12,8 +12,13 @@ db.loadDatabase(function (err) {
 
 });
 
-var text = require('textbelt');
-const sendmail = require('sendmail')();
+// import textbelt from "./node_modules";
+// import textbelt from ".node_modules/textbelt";
+// import text.js from ".node_modules";
+// import text.js from ".node_modules/textbelt";
+// var text = require('textbelt');
+
+// const sendmail = require('sendmail')();
 
 
 var catArray=["https://static.pexels.com/photos/127028/pexels-photo-127028.jpeg","https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg","http://s1.dmcdn.net/Jyj5s.jpg",
