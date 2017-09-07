@@ -1,6 +1,6 @@
 
-var Datastore = require('react-native-local-mongodb')
-  , db = new Datastore({ filename: 'asyncStorageKey' });
+var Datastore = require('react-native-local-mongodb');
+db = new Datastore({ filename: 'asyncStorageKey' });
 db.loadDatabase(function (err) { 
   if (err){
     console.log(err);
@@ -12,13 +12,13 @@ db.loadDatabase(function (err) {
 
 });
 
-// import textbelt from "./node_modules";
-// import textbelt from ".node_modules/textbelt";
-// import text.js from ".node_modules";
-// import text.js from ".node_modules/textbelt";
-// var text = require('textbelt');
+// import Communications from 'react-native-communications';
 
-// const sendmail = require('sendmail')();
+import SendSMS from 'react-native-sms'
+ 
+//some stuff
+ 
+
 
 
 var catArray=["https://static.pexels.com/photos/127028/pexels-photo-127028.jpeg","https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg","http://s1.dmcdn.net/Jyj5s.jpg",
@@ -114,17 +114,6 @@ console.log("cat array number",catArray.length);
 
 
 
-// sendmail({
-//     from: 'no-reply@yourdomain.com',
-//     to: 'test@qq.com, test@sohu.com, test@163.com ',
-//     subject: 'test sendmail',
-//     html: 'Mail of test sendmail ',
-//   }, function(err, reply) {
-//     console.log(err && err.stack);
-//     console.dir(reply);
-// });
-
-
 import React from 'react';
 import { 
 StyleSheet,
@@ -148,6 +137,18 @@ export default class App extends React.Component {
 
     };
   }
+  someFunction() {
+ 
+    SendSMS.send({
+        body: 'The default body of the SMS!',
+        recipients: ['0123456789', '9876543210'],
+        successTypes: ['sent', 'queued']
+    }, (completed, cancelled, error) => {
+ 
+        console.log('SMS Callback: completed: ' + completed + ' cancelled: ' + cancelled + 'error: ' + error);
+ 
+    });
+}
 
   dbfind(){
     db.find({}, function (err, docs) {
@@ -163,7 +164,8 @@ export default class App extends React.Component {
           console.log(numbers + " " + names);
           var catMessage = "Hello " + names + " Click the link right Meow and enjoy your cat content for today! " +   catArray[Math.floor(Math.random()*426)];
           console.log(catMessage);
-        }
+          SendSMS.send(myOptionsObject, callback);
+	        }
         
 
 
@@ -251,6 +253,10 @@ backgroundColor:'transparent',
 justifyContent: 'flex-start',
 alignItems: 'center',
   },
+  holder: {
+    flex: 0.25,
+    justifyContent: 'center',
+  },
 title:{
   fontSize:60,
   alignItems:'center',
@@ -259,6 +265,9 @@ title:{
   fontFamily: 'Chalkduster',
   marginBottom: 30
 },
+ text: {
+    fontSize: 32,
+  },
   header: {
     fontSize:20,
     borderColor: 'black',
@@ -306,8 +315,10 @@ title:{
     fontSize:15
   },
   background:{
-    flex: 1,
-    justifyContent:'flex-end'
+     flex: 1,
+        width: null,
+        height: null,
+        resizeMode: 'cover'
 
   },
   textcontainer:{

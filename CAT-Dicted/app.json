@@ -1,5 +1,23 @@
 {
   "expo": {
-    "sdkVersion": "20.0.0"
+    "name": "Cat-Dicted",
+    "icon": "./components/cat.png",
+    "version": "1.0.0",
+    "slug": "exp.host/@pohara9720/native-component-list",
+    "sdkVersion": "17.0.0",
+    "ios": {
+      "bundleIdentifier": "com.oharadevelopments.Cat-Dicted",
+      "publishBundlePath": "ios/cat-dicted/Supporting/shell-app.bundle",
+      "publishManifestPath": "ios/cat-dicted/Supporting/shell-app-manifest.json"
+    },
+    "android": {
+      "package": "com.oharadevelopments.Cat-Dicted"
+    },
+    "isDetached": true,
+    "detach": {
+      "scheme": "expae16ba3f98684079afe2502da20d04fd",
+      "iosExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/ios-v1.16.2-sdk17.0.0-b5bce87c-1a42-4b6d-888f-877f855c9680.tar.gz",
+      "androidExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/android-v1.16.1-sdk17.0.0-87570a36-13ff-4017-9b89-6c9930b78572.tar.gz"
+    }
   }
 }
